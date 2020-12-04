@@ -12,7 +12,7 @@ class Song
     @@all 
   end 
   
-  def artist=(artist)
+  def artist_name=(artist)
     @artist = artist 
     artist.add_song(self) unless artist.songs.include?(self)
   end 
