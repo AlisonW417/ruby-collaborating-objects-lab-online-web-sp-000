@@ -1,15 +1,13 @@
 class MP3Importer
   attr_accessor :path
   
-  @@all = []
-  
   def initialize(path)
-    @path = path  
-    @@all << self 
+    @path = path
   end 
   
   def files 
-    @@all 
+    Dir.glob("#{path}.*mp3").map do |file|
+      file.gsub("")
   end 
 
   
