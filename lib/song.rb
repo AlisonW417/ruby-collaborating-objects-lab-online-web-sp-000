@@ -23,8 +23,4 @@ class Song
     song.artist = Artist.find_or_create_by_name(artist_name)
     song.genre = genre_name
   end 
-    
-    
-  
-  
 end 
