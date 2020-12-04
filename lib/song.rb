@@ -13,9 +13,14 @@ class Song
   end 
   
   def artist=(artist)
-    @artist = artist 
-    artist.add_song(self) unless artist.songs.include?(self)
-  end 
+    # song.artist = artist
+    @artist = artist
+    artist.songs << self
+  end
+
+  def artist_name=(name)
+    self.artist = Artist.find_or_create_by_name(name)
+  end
   
   def self.new_by_filename(filename)
     artist_name, song_name, genre_name = filename.chomp(".mp3").split(" - ")
